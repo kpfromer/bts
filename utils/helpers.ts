@@ -6,7 +6,7 @@ export const getEventDate = (event: BtsEvent) =>
   DateTime.fromFormat(`${event.date} ${event.startTime}`, "D TT");
 
 export const getEvents = (): BtsEvent[] => {
-  return eventsData
+  return (eventsData as unknown as BtsEvent[])
     .map((event) => ({
       data: event,
       date: DateTime.fromFormat(`${event.date} ${event.startTime}`, "D TT"),
