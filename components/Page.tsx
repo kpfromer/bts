@@ -7,13 +7,18 @@ export interface PageProps {
 
 const Page: React.FC<PageProps> = ({ header, oneScreen = false, children }) => {
   return (
-    <div className={clsx(oneScreen ? "h-screen" : "min-h-screen")}>
+    <div
+      className={clsx(oneScreen ? "flex flex-col h-screen" : "min-h-screen")}
+    >
       {header}
 
-      <div className="flex">
-        <div className="flex-grow mx-auto w-full max-w-7xl px-4">
-          {children}
-        </div>
+      <div
+        className={clsx(
+          "flex-grow mx-auto w-full max-w-7xl px-4",
+          oneScreen && "flex flex-col min-h-0"
+        )}
+      >
+        {children}
       </div>
     </div>
   );
