@@ -5,7 +5,7 @@ import React from "react";
 import { Header } from "../components/Header";
 import Page from "../components/Page";
 
-const DraftLink = ({ href, children }) => (
+const DraftLink: React.FC<{ href: string }> = ({ href, children }) => (
   <li className="font-bold space-y-4 text-blue-500 underline hover:text-blue-400 hover:no-underline">
     <NextLink href={href}>{children}</NextLink>
   </li>
