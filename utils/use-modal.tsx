@@ -1,8 +1,9 @@
 import { useEffect, useState } from "react";
 import Modal from "../components/Modal";
+import { BtsEvent } from "./types";
 
-export default function useModal<TData>() {
-  const [data, setData] = useState<null | TData>(null);
+export default function useModal() {
+  const [data, setData] = useState<null | BtsEvent>(null);
   const isOpen = !!data;
 
   // Leave on escape
@@ -29,13 +30,13 @@ export default function useModal<TData>() {
     <Modal
       isOpen={isOpen}
       onClose={() => setData(null)}
-      event={data ?? undefined}
+      event={data}
     />
   );
 
   return {
     modal,
-    open: (data: TData) => setData(data),
+    open: (data: BtsEvent) => setData(data),
     close: () => setData(null),
   };
 }
