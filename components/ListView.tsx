@@ -31,6 +31,7 @@ const ListView: React.FC<ListViewProps> = ({ events }) => {
 
         {events.map((event, index) => (
           <div
+            key={event.id}
             className={clsx(
               "grid gap-3 grid-cols-3 p-3 group",
               index !== events.length - 1 && "border-b border-gray-300"
