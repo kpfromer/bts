@@ -6,24 +6,24 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 `.trim();
 
 const Banner = () => {
-  return (
-    <div className="relative overflow-hidden rounded mt-3 mb-4">
-      <div className="absolute inset-0 z-0">
-        <Image
-          src={bannerImage}
-          alt="Background"
-          className="object-cover"
-          layout="fill"
-        />
-      </div>
+    return (
+        <div className="relative overflow-hidden rounded mt-3 mb-4">
+            <div className="absolute inset-0 z-0">
+                <Image
+                    src={bannerImage}
+                    alt="Background"
+                    className="object-cover"
+                    layout="fill"
+                />
+            </div>
 
-      <div className="z-10 flex flex-col space-y-5 relative backdrop-filter backdrop-blur bg-black bg-opacity-30 py-5 px-3 text-white">
-        <h1 className="font-bold text-4xl text-center">Bus to Show's Events</h1>
+            <div className="z-10 flex flex-col space-y-5 relative backdrop-filter backdrop-blur bg-black bg-opacity-30 py-5 px-3 text-white">
+                <h1 className="font-bold text-4xl text-center">Bus to Show&apos;s Events</h1>
 
-        <p className="mx-auto max-w-4xl text-center">{text}</p>
-      </div>
-    </div>
-  );
+                <p className="mx-auto max-w-4xl text-center">{text}</p>
+            </div>
+        </div>
+    );
 };
 
 export default Banner;

@@ -10,7 +10,7 @@ import useModal from "../utils/use-modal";
 
 const events = getEvents();
 
-export interface DraftTwoProps {}
+export interface DraftTwoProps { }
 
 // w-full sm:w-1/3 md:w-1/4
 
@@ -32,10 +32,10 @@ const DraftTwo: React.FC<DraftTwoProps> = (props) => {
           <p className="mx-auto max-w-4xl text-center">
             Bus to Show is coming to you in the present time from the future
             where people do not need to use their own hands to drive a vehicle.
-            In the future, and now in the present, Bus to Show's strategy is to
+            In the future, and now in the present, Bus to Show&apos;s strategy is to
             provide autonomous vehicles in which humans board and magically get
             transported to their favorite local events. Why is Bus to Show
-            bringing back this incredible technology? It's simple: it saves
+            bringing back this incredible technology? It&apos;s simple: it saves
             lives and saves fuel that preserves the environment for future
             people. All you need to do is hop on board and be{" "}
             <span className="font-bold">apart of the solution.</span>{" "}

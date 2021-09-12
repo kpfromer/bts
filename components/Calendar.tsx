@@ -55,6 +55,7 @@ const Calendar: React.FC<CalendarProps> = ({ onClick }) => {
           renderDay={(data) =>
             data.map((item, index) => (
               <div
+                key={item.data.id}
                 className="cursor-pointer"
                 onClick={() => onClick(item.data)}
               >
