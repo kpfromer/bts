@@ -70,7 +70,7 @@ const ListView: React.FC<ListViewProps> = ({ events }) => {
           </div>
         ) : (
           <div className="flex h-full">
-            <div className="m-auto">
+            <div className="m-auto text-center">
               <h1 className="font-bold text-2xl mb-3">No event selected!</h1>
               <p>Try selecting one on the left panel.</p>
             </div>
