@@ -15,3 +15,16 @@ export const getEvents = (): BtsEvent[] => {
     .sort((a, b) => a.date.diff(b.date).milliseconds)
     .map(({ data }) => data);
 };
+
+export const chunkToParagraphs = (data: string): string[] => {
+  const paragraphs = data.split(". ");
+
+  const chunks: string[][] = [];
+
+  for (let i = 0; i < paragraphs.length; ++i) {
+    if (i % 4 === 0) chunks.push([]);
+    chunks[chunks.length - 1].push(paragraphs[i]);
+  }
+
+  return chunks.map((items) => items.join("\n"));
+};

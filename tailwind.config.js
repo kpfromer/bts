@@ -9,6 +9,11 @@ module.exports = {
     extend: {
       colors: {
         logo: "#ff420f",
+        bts: {
+          400: "#ff5527",
+          500: "#ff420f",
+          600: "#e63b0e",
+        },
       },
 
       fontFamily: {
