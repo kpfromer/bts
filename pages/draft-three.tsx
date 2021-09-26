@@ -3,16 +3,16 @@ import React from "react";
 import { Header } from "../components/Header";
 import ListView from "../components/ListView";
 import Page from "../components/Page";
+import Footer from "../components/Footer";
 import { getEvents } from "../utils/helpers";
 import useModal from "../utils/use-modal";
 
 const sortedEvents = getEvents();
 
-export interface DraftThreeProps { }
+export interface DraftThreeProps {}
 
 const DraftThree: React.FC<DraftThreeProps> = (props) => {
   const { modal, open, close } = useModal();
-
 
   return (
     <>
@@ -25,6 +25,8 @@ const DraftThree: React.FC<DraftThreeProps> = (props) => {
 
         <ListView events={sortedEvents} />
       </Page>
+
+      <Footer />
 
       {modal}
     </>
