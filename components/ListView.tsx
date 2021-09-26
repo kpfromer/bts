@@ -2,7 +2,9 @@ import clsx from "clsx";
 import { DateTime } from "luxon";
 import { useState, useMemo } from "react";
 import { getEventDate, chunkToParagraphs } from "../utils/helpers";
+import EmptyState from "./EmptyState";
 import { BtsEvent } from "../utils/types";
+import {} from "react-icons/fi";
 
 export interface ListViewProps {
   events: BtsEvent[];
@@ -27,10 +29,10 @@ const ListView: React.FC<ListViewProps> = ({ events }) => {
   };
 
   return (
-    <div className="grid gap-3 grid-cols-2 mt-5 mb-3 flex-grow min-h-0">
-      <div className="flex flex-col border border-gray-300 rounded-lg min-h-0 overflow-y-auto">
+    <div className="grid gap-3 grid-cols-1 md:grid-cols-2 mt-5 mb-3 flex-grow min-h-0">
+      <div className="flex flex-col border border-gray-300 rounded-lg min-h-0 overflow-y-auto text-sm md:text-base">
         <div
-          className="grid gap-3 grid-cols-3 font-bold text-3xl text-logo p-3 border-b-2 border-gray-300"
+          className="grid gap-3 grid-cols-3 font-bold text-xl md:text-3xl text-logo p-3 border-b-2 border-gray-300"
           style={{
             ...gridStyle,
             gridTemplateColumns: "minmax(0, 1fr) minmax(0, 2fr)",
@@ -52,7 +54,7 @@ const ListView: React.FC<ListViewProps> = ({ events }) => {
           <div
             key={event.id}
             className={clsx(
-              "grid gap-3 grid-cols-3 p-3 group",
+              "grid gap-3 grid-cols-3 p-3 group transition-colors hover:bg-gray-200",
               index !== events.length - 1 && "border-b border-gray-300"
             )}
             style={gridStyle}
@@ -86,6 +88,7 @@ const ListView: React.FC<ListViewProps> = ({ events }) => {
               <h2 className="text-2xl">
                 {getEventDate(event).toLocaleString(DateTime.DATETIME_SHORT)}
               </h2>
+              <h2>Venue: {event.venue}</h2>
             </div>
 
             {event.headlinerBio?.length > 0 ? (
@@ -110,6 +113,8 @@ const ListView: React.FC<ListViewProps> = ({ events }) => {
         ) : (
           <div className="flex h-full">
             <div className="m-auto text-center">
+              <EmptyState height="12em" width="12em" className="mx-auto" />
+
               <h1 className="font-bold text-2xl mb-3 font-header">
                 No event selected!
               </h1>
