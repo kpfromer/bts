@@ -80,14 +80,24 @@ const ListView: React.FC<ListViewProps> = ({ events }) => {
       <div className="border border-gray-300 p-3 rounded-lg min-h-0 overflow-y-auto">
         {event ? (
           <div>
-            <div className="pb-3 mb-3 space-y-2 font-bold border-b border-gray-300">
-              <h1 className="text-logo text-4xl font-header">
-                {event.headliner}
-              </h1>
-              <h2 className="text-2xl">
-                {getEventDate(event).toLocaleString(DateTime.DATETIME_SHORT)}
-              </h2>
-              <h2>Venue: {event.venue}</h2>
+            <div className="pb-3 mb-3 border-b border-gray-300 flex items-center md:pr-3">
+              <div className="space-y-2 font-bold">
+                <h1 className="text-logo text-4xl font-header">
+                  {event.headliner}
+                </h1>
+                <h2 className="text-2xl">
+                  {getEventDate(event).toLocaleString(DateTime.DATETIME_SHORT)}
+                </h2>
+                <h2>Venue: {event.venue}</h2>
+              </div>
+
+              <div className="h-24 w-24 ml-auto md:mr-4">
+                <img
+                  className="rounded-2xl"
+                  src="https://source.unsplash.com/GxH1DSxzons/200x200"
+                  alt="Man looking at item at a store"
+                />
+              </div>
             </div>
 
             {event.headlinerBio?.length > 0 ? (
