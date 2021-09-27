@@ -3,7 +3,7 @@ import * as React from "react";
 const Footer: React.FC = () => {
   return (
     <footer className="flex px-2 py-3 md:py-4 bg-gray-700 text-white">
-      <div className="m-auto max-w-7xl text-center">
+      <div className="m-auto max-w-3xl text-center">
         <h2 className="font-header text-bts-500 font-bold text-xl md:text-3xl">
           Bus To Show
         </h2>

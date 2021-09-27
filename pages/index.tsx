@@ -23,10 +23,11 @@ const Home: NextPage = () => {
       <Header />
 
       <Page>
+        <DraftLink href="/draft-three">Final Draft</DraftLink>
+
         <ul>
           <DraftLink href="/draft-one">Draft One</DraftLink>
           <DraftLink href="/draft-two">Draft Two</DraftLink>
-          <DraftLink href="/draft-three">Draft Three</DraftLink>
         </ul>
       </Page>
     </div>
