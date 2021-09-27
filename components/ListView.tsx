@@ -4,7 +4,6 @@ import { useState, useMemo } from "react";
 import { getEventDate, chunkToParagraphs } from "../utils/helpers";
 import EmptyState from "./EmptyState";
 import { BtsEvent } from "../utils/types";
-import {} from "react-icons/fi";
 
 export interface ListViewProps {
   events: BtsEvent[];
