@@ -6,9 +6,9 @@ import { Header } from "../components/Header";
 import Page from "../components/Page";
 
 const DraftLink: React.FC<{ href: string }> = ({ href, children }) => (
-  <li className="font-bold space-y-4 text-blue-500 underline hover:text-blue-400 hover:no-underline">
+  <div className="mt-10 text-6xl font-bold space-y-4 text-blue-500 underline hover:text-blue-400 hover:no-underline">
     <NextLink href={href}>{children}</NextLink>
-  </li>
+  </div>
 );
 
 const Home: NextPage = () => {
@@ -23,12 +23,7 @@ const Home: NextPage = () => {
       <Header />
 
       <Page>
-        <DraftLink href="/draft-three">Final Draft</DraftLink>
-
-        <ul>
-          <DraftLink href="/draft-one">Draft One</DraftLink>
-          <DraftLink href="/draft-two">Draft Two</DraftLink>
-        </ul>
+        <DraftLink href="/final-draft">Final Draft</DraftLink>
       </Page>
     </div>
   );
